@@ -1,0 +1,76 @@
+Flow of APIs for videocall
+
+Call this API after getting user name , phone , code details
+Designer/otoaccesstoken
+designer_id
+identity - brand name
+title
+starting_time
+ending_time
+product_ids
+name
+mobile
+code
+
+send empty string if title empty and in ending_time
+code without + sign
+
+In response you will get share link and other data
+Show copy and share link UI
+and use share link for that
+
+After that call below API onclick of Notify button
+
+Designer/smsbroadcast
+designer_id
+message
+phone_numbers
+link
+
+Then go to 1:1 screen
+
+APIs call on this screen according to requirement
+
+Designer/otoaddtocart
+designer_id
+otoId
+productId
+isAdded
+
+Call this API when you add product during call
+Designer/otoupdateproductlist
+designer_id
+otoId
+productIds
+
+Call this API after room connection done on twilio
+Designer/storesid
+designer_id
+room_id
+room_sid
+participant_sid -->  brand side participant sid 
+you will get room_sid and participant_sid(brand side user sid) on room connnected
+
+Call this API on end call
+Designer/composerecord
+designer_id
+room_id
+room_sid
+participant_sid
+ending_time
+
+
+And for camera flag and comments in firebase
+video_call_messages
+collection used
+
+Pinkesh Gajjar  1:12 PM
+Ok
+
+Tabassum Malek  1:14 PM
+camera flag:
+key - camera
+default value - 1
+fron_camera - 1
+back camera - 0
+for reference check 396 in video_call_messages .
